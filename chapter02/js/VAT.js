@@ -1,6 +1,7 @@
 /* 
 Calculate VAT and final price
 */
+
 const rawPrice = Number(prompt('Enter the raw price:'));
 // VAT rate = 20.6%
 const vatRate = 20.6 / 100;
