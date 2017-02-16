@@ -4,11 +4,11 @@ Minimum of two numbers
 
 // Return the minimum of two numbers
 function min(a, b) {
-    if (a < b) {
-        return a;
-    } else {
-        return b;
-    }
+  if (a < b) {
+    return a;
+  } else {
+    return b;
+  }
 }
 // Alternative solution using an arrow function
 /*const min = (a, b) => {

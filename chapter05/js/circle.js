@@ -17,5 +17,5 @@ const area = radius => Math.pow(radius, 2) * Math.PI;
 }*/
 
 const r = Number(prompt("Enter the circle radius:"));
-alert(`Its circumference is ${circumference(r)}`);
-alert(`Its area is ${area(r)}`);
+console.log(`Its circumference is ${circumference(r)}`);
+console.log(`Its area is ${area(r)}`);

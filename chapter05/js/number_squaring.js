@@ -8,11 +8,11 @@ function square1(x) {
 }
 
 // Square the given number x
-const square2 = (x) => {
+const square2 = x => {
   return x * x; // Or: Math.pow(x,2);
-}
+};
 // Even more concise solution
-// const square2 = (x) => x * x;
+// const square2 = x => x * x;
 
 console.log(square1(0)); // Must show 0
 console.log(square1(2)); // Must show 4
@@ -23,5 +23,5 @@ console.log(square2(2)); // Must show 4
 console.log(square2(5)); // Must show 25
 
 for (let i = 0; i <= 10; i++) {
-    console.log(square1(i));
+  console.log(square1(i));
 }
