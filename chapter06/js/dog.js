@@ -9,7 +9,7 @@ const dog = {
 
   // Make the dog bark
   bark() {
-    return "Grrr! Grrr!";
+    return "Woof! Woof!";
   }
 };
 
