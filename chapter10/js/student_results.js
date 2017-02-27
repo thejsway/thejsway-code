@@ -1,0 +1,42 @@
+/*
+Student results
+*/
+
+const students = [{
+  name: "Anna",
+  sex: "f",
+  grades: [4.5, 3.5, 4]
+}, {
+  name: "Dennis",
+  sex: "m",
+  country: "Germany",
+  grades: [5, 1.5, 4]
+}, {
+  name: "Martha",
+  sex: "f",
+  grades: [5, 4, 2.5, 3]
+}, {
+  name: "Brock",
+  sex: "m",
+  grades: [4, 3, 2]
+}];
+
+const female = student => student.sex === "f";
+const average = array => array.reduce((sum, value) => sum + value, 0) / array.length;
+
+// Filter by sex, then map each student to an object containing her name and average grade
+// Parentheses between returned object of map function are mandatory
+console.log(students.filter(female).map(student => ({
+  name: student.name,
+  avgGrade: average(student.grades)
+})));
+
+// Alternate solution using the classical function syntax
+/*
+console.log(students.filter(female).map(function(student) {
+  return {
+    name: student.name,
+    avgGrade: average(student.grades)
+  };
+}));
+*/
