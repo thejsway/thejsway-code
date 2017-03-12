@@ -2,10 +2,10 @@
 Character inventory
 */
 
-// Character prototype
-const Character = {
+// Character class
+class Character {
   // Initialize the character
-  init(name, health, strength) {
+  constructor(name, health, strength) {
     this.name = name;
     this.health = health;
     this.strength = strength;
@@ -15,7 +15,7 @@ const Character = {
       gold: 10,
       keys: 1
     };
-  },
+  }
   // Attack a target
   attack(target) {
     if (this.health > 0) {
@@ -37,29 +37,22 @@ const Character = {
     } else {
       console.log(`${this.name} can't attack (they've been eliminated)`);
     }
-  },
+  }
   // Return the character description
   describe() {
     return `${this.name} has ${this.health} health points, ${this.strength} as strength, ` +
       `${this.xp} XP points, ${this.inventory.gold} gold and ${this.inventory.keys} key(s)`;
   }
-};
-
-// Factory function to create and setup a new character
-function createCharacter(name, health, strength) {
-  const character = Object.create(Character);
-  character.init(name, health, strength);
-  return character;
 }
 
-const aurora = createCharacter("Aurora", 150, 25);
-const glacius = createCharacter("Glacius", 130, 30);
+const aurora = new Character("Aurora", 150, 25);
+const glacius = new Character("Glacius", 130, 30);
 
 console.log("Welcome to the adventure! Here are our heroes:");
 console.log(aurora.describe());
 console.log(glacius.describe());
 
-const monster = createCharacter("Spike", 40, 20);
+const monster = new Character("Spike", 40, 20);
 console.log("A wild monster has appeared: it's named " + monster.name);
 
 monster.attack(aurora);
