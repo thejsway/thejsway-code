@@ -8,5 +8,5 @@ const backgroundColor = prompt("Enter the background color:");
 const divElements = document.getElementsByTagName("div");
 for (const divElement of divElements) {
   divElement.style.color = textColor;
-    divElement.style.backgroundColor = backgroundColor;
+  divElement.style.backgroundColor = backgroundColor;
 }
