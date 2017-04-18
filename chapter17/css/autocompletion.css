@@ -1,0 +1,18 @@
+/* Add spacing between each country suggestion */
+.suggestion {
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+/* Change suggestion color when hovering it with the mouse */
+.suggestion:hover {
+    background-color: #adf;
+    cursor: pointer;
+}
+
+/* Position the suggestion list just below the input box */
+#suggestions {
+    position: absolute;
+    border: 1px solid black;
+    left: 155px;
+}
