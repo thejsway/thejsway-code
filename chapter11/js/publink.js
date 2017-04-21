@@ -27,7 +27,7 @@ class Link {
 const links = [];
 links.push(new Link("Hacker News", "https://news.ycombinator.com", "Baptiste"));
 links.push(new Link("Reddit", "https://reddit.com", "Thomas"));
-links.push(new Link("Noing Boing", "boingboing.net", "Daniel"));
+links.push(new Link("Boing Boing", "boingboing.net", "Daniel"));
 
 let choice;
 // Main program loop
