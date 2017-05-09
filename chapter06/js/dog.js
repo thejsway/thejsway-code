@@ -1,4 +1,4 @@
-/* 
+/*
 Object-oriented dog
 */
 
@@ -9,7 +9,7 @@ const dog = {
 
   // Make the dog bark
   bark() {
-    return "Woof! Woof!";
+    return "Grrr! Grrr!";
   }
 };
 

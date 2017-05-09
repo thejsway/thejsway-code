@@ -25,8 +25,7 @@ accountList.push(new Account("Brad"));
 accountList.push(new Account("Georges"));
 
 // Credit and describe each account
-for (const account of accountList) {
+accountList.forEach(account => {
   account.credit(1000);
   console.log(account.describe());
-}
-
+});

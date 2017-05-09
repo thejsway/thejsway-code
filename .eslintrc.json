@@ -1,0 +1,61 @@
+{
+  // Extend AirBnb JavaScript style guide
+  "extends": "airbnb",
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true
+  },
+  "rules": {
+    // Set double quotes as default, single quotes will trigger a warning except when escapping
+    "quotes": [
+      "error",
+      "double",
+      {
+        "avoidEscape": true
+      }
+    ],
+    // Enable console calls
+    "no-console": "off",
+    // Enable prompt() and alert()
+    "no-alert": "off",
+    // Enable unary operators
+    "no-plusplus": "off",
+    // Enable mixing operators in expressions
+    "no-mixed-operators": "off",
+    // Allow switch statements without a default case
+    "default-case": "off",
+    // Disallow trailing commas
+    "comma-dangle": [
+      "error",
+      "never"
+    ],
+    // Allow use of Math.pow()
+    "no-restricted-properties": [
+      "off",
+      {
+        "object": "Math",
+        "property": "pow"
+      }
+    ],
+    // Allows omitting parens with arrow functions when there is only one argument
+    "arrow-parens": [
+      "error",
+      "as-needed"
+    ],
+    // Allow updating properties of objects passed as parameters
+    "no-param-reassign": [
+      "error",
+      {
+        "props": false
+      }
+    ],
+    // Allow for-of loop
+    "no-restricted-syntax": [
+      "error",
+      "ForInStatement",
+      "LabeledStatement",
+      "WithStatement"
+    ]
+  }
+}

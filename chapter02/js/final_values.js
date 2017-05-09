@@ -1,9 +1,9 @@
-/* 
+/*
 Guess the final values of variables
 */
 
 let a = 2;
-a = a - 1;
+a -= 1;
 a++;
 let b = 8;
 b += 2;

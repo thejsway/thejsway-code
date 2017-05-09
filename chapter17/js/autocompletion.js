@@ -16,8 +16,11 @@ const countryList = [
   "Azerbaïjan"
 ];
 
+const countryElement = document.querySelector("input");
+const suggestionsElement = document.getElementById("suggestions");
+
 // Create and return a suggestion
-function createSuggestionElement(country) {
+const createSuggestionElement = country => {
   const element = document.createElement("div");
   element.classList.add("suggestion");
   element.textContent = country;
@@ -29,20 +32,17 @@ function createSuggestionElement(country) {
     suggestionsElement.innerHTML = "";
   });
   return element;
-}
-
-const countryElement = document.querySelector("input");
-const suggestionsElement = document.getElementById("suggestions");
+};
 
 // Handle input change
 countryElement.addEventListener("input", () => {
   // Empty suggestion list
   suggestionsElement.innerHTML = "";
-  for (const country of countryList) {
+  countryList.forEach(country => {
     // Check if the inputted value matches the start of the country
     if (country.startsWith(countryElement.value)) {
       // Add the country as suggestion
       suggestionsElement.appendChild(createSuggestionElement(country));
     }
-  }
+  });
 });

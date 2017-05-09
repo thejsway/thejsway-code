@@ -3,22 +3,27 @@ Game of Thrones characters
 */
 
 // Character list. Each house has a name and a code
-const houses = [{
-  code: "ST",
-  name: "Stark"
-}, {
-  code: "LA",
-  name: "Lannister"
-}, {
-  code: "BA",
-  name: "Baratheon"
-}, {
-  code: "TA",
-  name: "Targaryen"
-}];
+const houses = [
+  {
+    code: "ST",
+    name: "Stark"
+  },
+  {
+    code: "LA",
+    name: "Lannister"
+  },
+  {
+    code: "BA",
+    name: "Baratheon"
+  },
+  {
+    code: "TA",
+    name: "Targaryen"
+  }
+];
 
 // Return an array of characters belonging to a house
-function getCharacters(houseCode) {
+const getCharacters = houseCode => {
   switch (houseCode) {
     case "ST":
       return ["Eddard", "Catelyn", "Robb", "Sansa", "Arya", "Jon Snow"];
@@ -31,22 +36,22 @@ function getCharacters(houseCode) {
     default:
       return []; // Empty array
   }
-}
+};
 
 // Create and return an HTML <option> tag
-function createOptionElement(text, value) {
+const createOptionElement = (text, value) => {
   const element = document.createElement("option");
   element.textContent = text;
   element.value = value;
   return element;
-}
+};
 
 // Create and return and HTML <li> tag
-function createLiElement(text) {
+const createLiElement = text => {
   const element = document.createElement("li");
   element.textContent = text;
   return element;
-}
+};
 
 const houseElement = document.querySelector("select");
 
@@ -63,7 +68,7 @@ houseElement.addEventListener("change", e => {
   // Empty the list
   characterElement.innerHTML = "";
   // Add each character to the list
-  for (const character of characters) {
+  characters.forEach(character => {
     characterElement.appendChild(createLiElement(character));
-  }
+  });
 });

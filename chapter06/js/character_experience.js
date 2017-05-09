@@ -1,4 +1,4 @@
-/* 
+/*
 RPG character experience
 */
 
@@ -15,12 +15,12 @@ const aurora = {
 };
 
 // Aurora is harmed by an arrow
-aurora.health = aurora.health - 20;
+aurora.health -= 20;
 
 // Aurora equips a strength necklace
-aurora.strength = aurora.strength + 10;
+aurora.strength += 10;
 
 // Aurora learn a new skill
-aurora.xp = aurora.xp + 15;
+aurora.xp += 15;
 
 console.log(aurora.describe());

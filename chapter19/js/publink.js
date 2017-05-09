@@ -5,16 +5,20 @@ Interactive web page
 // Represent a link
 class Link {
   constructor(title, url, author) {
+    let absoluteUrl = url;
     // Check if url starts with "http://" or "https://"
-    if ((!url.startsWith("http://")) && (!url.startsWith("https://"))) {
+    if (
+      !absoluteUrl.startsWith("http://") &&
+      !absoluteUrl.startsWith("https://")
+    ) {
       // If not, add "http://" at the beginning
-      url = "http://" + url;
+      absoluteUrl = `http://${absoluteUrl}`;
     }
 
     // Add data properties
     this.title = title;
-    this.url = url;
     this.author = author;
+    this.url = absoluteUrl;
   }
 
   // Describe the link as a string
@@ -23,8 +27,10 @@ class Link {
   }
 }
 
+const contentElement = document.getElementById("content");
+
 // Create and return a DOM element showing a link
-function createLinkElement(link) {
+const createLinkElement = link => {
   // Create DOM element for link title
   const titleElement = document.createElement("a");
   titleElement.href = link.url;
@@ -45,8 +51,10 @@ function createLinkElement(link) {
   // Create DOM element for link author
   const authorElement = document.createElement("span");
   authorElement.classList.add("linkAuthor");
-  authorElement.appendChild(document.createTextNode("Submitted by " + link.author));
-  
+  authorElement.appendChild(
+    document.createTextNode(`Submitted by ${link.author}`)
+  );
+
   // Create DOM element for link
   const linkElement = document.createElement("div");
   linkElement.classList.add("link");
@@ -54,22 +62,22 @@ function createLinkElement(link) {
   linkElement.appendChild(authorElement);
 
   return linkElement;
-}
+};
 
 // Create and return a DOM input element
 // Parameters are placeholder text and input size
-function createInputElement(placeholder, size) {
-    const inputElement = document.createElement("input");
-    inputElement.type = "text";
-    inputElement.setAttribute("placeholder", placeholder);
-    inputElement.setAttribute("size", size);
-    inputElement.setAttribute("required", "true");
-    inputElement.classList.add("form-control");
-    return inputElement;
-}
+const createInputElement = (placeholder, size) => {
+  const inputElement = document.createElement("input");
+  inputElement.type = "text";
+  inputElement.setAttribute("placeholder", placeholder);
+  inputElement.setAttribute("size", size);
+  inputElement.setAttribute("required", "true");
+  inputElement.classList.add("form-control");
+  return inputElement;
+};
 
 // Create and return a form for submitting a new link
-function createLinkForm() {
+const createLinkForm = () => {
   // Create input fields for link properties
   const authorElement = createInputElement("Enter author", 20);
   const titleElement = createInputElement("Enter link title", 40);
@@ -81,7 +89,7 @@ function createLinkForm() {
   submitElement.value = "Add link";
   submitElement.classList.add("btn");
   submitElement.classList.add("btn-default");
-  
+
   // Create link submission form
   const linkFormElement = document.createElement("form");
   linkFormElement.classList.add("linkForm");
@@ -90,19 +98,23 @@ function createLinkForm() {
   linkFormElement.appendChild(titleElement);
   linkFormElement.appendChild(urlElement);
   linkFormElement.appendChild(submitElement);
-  
+
   // Handle form submission
   linkFormElement.addEventListener("submit", e => {
     // Cancel default form behavior
     e.preventDefault();
 
     // Create new link object from field values
-    const newLink = new Link(titleElement.value, urlElement.value, authorElement.value);
+    const newLink = new Link(
+      titleElement.value,
+      urlElement.value,
+      authorElement.value
+    );
 
     // Add new link to page, replacing form
     const newLinkElement = createLinkElement(newLink);
     contentElement.replaceChild(newLinkElement, e.target);
-    
+
     // Create info message indicating success
     const infoElement = document.createElement("div");
     infoElement.classList.add("alert");
@@ -114,9 +126,9 @@ function createLinkForm() {
       contentElement.removeChild(infoElement);
     }, 2000);
   });
-  
+
   return linkFormElement;
-}
+};
 
 // Initial links array
 const links = [];
@@ -125,7 +137,6 @@ links.push(new Link("Reddit", "https://reddit.com", "Thomas"));
 links.push(new Link("Boing Boing", "boingboing.net", "Daniel"));
 
 // Add each link to page
-const contentElement = document.getElementById("content");
 links.forEach(link => {
   const linkElement = createLinkElement(link);
   contentElement.appendChild(linkElement);

@@ -1,4 +1,4 @@
-/* 
+/*
 Show the following day of the week
 */
 
@@ -6,46 +6,46 @@ const day = prompt("Enter a day of the week:");
 
 // Solution using an if
 if (day === "monday") {
-    alert("Tomorrow is tuesday");
+  console.log("Tomorrow is tuesday");
 } else if (day === "tuesday") {
-    alert("Tomorrow is wednesday");
+  console.log("Tomorrow is wednesday");
 } else if (day === "wednesday") {
-    alert("Tomorrow is thursday");
+  console.log("Tomorrow is thursday");
 } else if (day === "thursday") {
-    alert("Tomorrow is friday");
+  console.log("Tomorrow is friday");
 } else if (day === "friday") {
-    alert("Tomorrow is saturday");
+  console.log("Tomorrow is saturday");
 } else if (day === "saturday") {
-    alert("Tomorrow is sunday");
+  console.log("Tomorrow is sunday");
 } else if (day === "sunday") {
-    alert("Tomorrow is monday");
+  console.log("Tomorrow is monday");
 } else {
-    alert("Unrecognized day!");
+  console.log("Unrecognized day!");
 }
 
-// Solution using a switch
-/*switch (day) {
-case "monday":
-    alert("Tomorrow is tuesday");
+// Alternative solution using a switch
+/* switch (day) {
+  case "monday":
+    console.log("Tomorrow is tuesday");
     break;
-case "tuesday":
-    alert("Tomorrow is wednesday");
+  case "tuesday":
+    console.log("Tomorrow is wednesday");
     break;
-case "wednesday":
-    alert("Tomorrow is thursday");
+  case "wednesday":
+    console.log("Tomorrow is thursday");
     break;
-case "thursday":
-    alert("Tomorrow is friday");
+  case "thursday":
+    console.log("Tomorrow is friday");
     break;
-case "friday":
-    alert("Tomorrow is saturday");
+  case "friday":
+    console.log("Tomorrow is saturday");
     break;
-case "saturday":
-    alert("Tomorrow is sunday");
+  case "saturday":
+    console.log("Tomorrow is sunday");
     break;
-case "sunday":
-    alert("Tomorrow is monday");
+  case "sunday":
+    console.log("Tomorrow is monday");
     break;
-default:
-    alert("Unrecognized day!");
-}*/
+  default:
+    console.log("Unrecognized day!");
+} */

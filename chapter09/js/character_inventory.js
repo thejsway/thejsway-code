@@ -20,15 +20,19 @@ class Character {
   attack(target) {
     if (this.health > 0) {
       const damage = this.strength;
-      console.log(`${this.name} attacks ${target.name} and causes ${damage} damage points`);
+      console.log(
+        `${this.name} attacks ${target.name} and causes ${damage} damage points`
+      );
       target.health -= damage;
       if (target.health > 0) {
         console.log(`${target.name} has ${target.health} health points left`);
       } else {
         target.health = 0;
         const bonusXP = 10;
-        console.log(`${this.name} eliminated ${target.name} and wins ${bonusXP} experience points`
-                   + `, ${target.inventory.gold} gold and ${target.inventory.keys} key(s)`);
+        console.log(
+          `${this.name} eliminated ${target.name} and wins ${bonusXP} experience points` +
+            `, ${target.inventory.gold} gold and ${target.inventory.keys} key(s)`
+        );
         this.xp += bonusXP;
         // The victim's inventory goes to its vanquisher
         this.inventory.gold += target.inventory.gold;
@@ -40,8 +44,10 @@ class Character {
   }
   // Return the character description
   describe() {
-    return `${this.name} has ${this.health} health points, ${this.strength} as strength, ` +
-      `${this.xp} XP points, ${this.inventory.gold} gold and ${this.inventory.keys} key(s)`;
+    return (
+      `${this.name} has ${this.health} health points, ${this.strength} as strength, ` +
+      `${this.xp} XP points, ${this.inventory.gold} gold and ${this.inventory.keys} key(s)`
+    );
   }
 }
 
@@ -53,7 +59,7 @@ console.log(aurora.describe());
 console.log(glacius.describe());
 
 const monster = new Character("Spike", 40, 20);
-console.log("A wild monster has appeared: it's named " + monster.name);
+console.log(`A wild monster has appeared: it's named ${monster.name}`);
 
 monster.attack(aurora);
 monster.attack(glacius);
