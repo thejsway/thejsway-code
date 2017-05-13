@@ -51,6 +51,8 @@ const titles = movies => movies.map(movie => movie.title);
 const older = movie => movie.year < 2000;
 const filter = (movies, fct) => movies.filter(fct);
 
-console.log(titles(filter(movieList, older)));
+const moviesBefore2000 = titles(filter(movieList, older));
 // Alternative solution without our own filter() function
-// console.log(titles(movieList.filter(older)));
+// const moviesBefore2000 = titles(movieList.filter(older));
+
+console.log(moviesBefore2000);
