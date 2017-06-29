@@ -7,7 +7,7 @@ fetch("https://thejsway.glitch.me/api/articles")
   .then(articles => {
     articles.forEach(article => {
       // Create title element
-      const titleElement = document.createElement("h2");
+      const titleElement = document.createElement("h3");
       titleElement.textContent = article.title;
       // Create content element
       const contentElement = document.createElement("p");

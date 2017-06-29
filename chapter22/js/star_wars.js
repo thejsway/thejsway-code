@@ -2,46 +2,44 @@
 Star Wars universe
 */
 
-// Anonymous function that takes a character id and return its name
-const getCharacterName = id =>
-  fetch(`http://swapi.co/api/people/${id}`)
+// Show info about a planet
+const showPlanetInfo = planetId => {
+  fetch(`http://swapi.co/api/planets/${planetId}`)
     .then(response => response.json())
-    .then(character => character.name);
-
-fetch("http://swapi.co/api/planets")
-  .then(response => response.json())
-  .then(planets => {
-    // Get planet count
-    const planetCount = planets.count;
-    // Create planet names array
-    const planetNames = planets.results.map(planet => planet.name);
-    // Compute total population by reducing the planets array
-    const totalPopulation = planets.results.reduce((acc, planet) => {
-      if (planet.population !== "unknown") {
-        // Planet population must by converted to a integer before being added
-        return acc + Number(planet.population);
-      }
-      return acc;
-      /* Alternative solution:
-      return planet.population !== "unknown"
-        ? acc + Number(planet.population)
-        : acc; */
-    }, 0);
-    // Create DOM elements
-    const planetSummaryElement = document.createElement("p");
-    planetSummaryElement.textContent = `There are ${planetCount} planets in the Star Wars universe.
-        Their total population is ${totalPopulation} people. The planets are:`;
-    const planetListElement = document.createElement("ul");
-    planetNames.forEach(name => {
-      const planetNameElement = document.createElement("li");
-      planetNameElement.textContent = name;
-      planetListElement.appendChild(planetNameElement);
+    .then(planet => {
+      const movieCount = planet.films.length;
+      // Create DOM elements for planet
+      const planetNameElement = document.createElement("h3");
+      planetNameElement.textContent = planet.name;
+      const planetSummaryElement = document.createElement("p");
+      planetSummaryElement.textContent = `Climate: ${planet.climate}. Population: ${planet.population}. 
+        Appears in ${movieCount} movie(s).`;
+      // Add elements to the page
+      const planetInfoElement = document.getElementById("infos");
+      planetInfoElement.innerHTML = "";
+      planetInfoElement.appendChild(planetNameElement);
+      planetInfoElement.appendChild(planetSummaryElement);
+    })
+    .catch(err => {
+      console.error(err.message);
     });
-    // Add info to the page
-    const planetInfoElement = document.getElementById("planetInfo");
-    planetInfoElement.appendChild(planetSummaryElement);
-    planetInfoElement.appendChild(planetListElement);
-  })
-  .catch(err => {
-    console.error(err.message);
+};
+
+const planetLinksElement = document.getElementById("links");
+
+for (let planetId = 1; planetId <= 10; planetId++) {
+  // Create planet link
+  const planetLinkElement = document.createElement("a");
+  planetLinkElement.id = planetId;
+  planetLinkElement.textContent = planetId;
+  planetLinkElement.href = "#";
+  // Handle click on link
+  planetLinkElement.addEventListener("click", e => {
+    e.preventDefault();
+    showPlanetInfo(e.target.id);
   });
+  // Add link to the page
+  planetLinksElement.appendChild(planetLinkElement);
+  planetLinksElement.appendChild(document.createTextNode(" | "));
+}
+planetLinksElement.appendChild(document.createTextNode(" ..."));

@@ -22,9 +22,12 @@ formElement.addEventListener("submit", e => {
       websiteElement.textContent = websiteElement.href;
       // Add info on the page
       const infosElement = document.getElementById("infos");
-      infosElement.innerHTML = ""; // Suppression des infos précédentes
+      infosElement.innerHTML = ""; // Remove previous user info
       infosElement.appendChild(pictureElement);
       infosElement.appendChild(nameElement);
       infosElement.appendChild(websiteElement);
+    })
+    .catch(err => {
+      console.error(err.message);
     });
 });
