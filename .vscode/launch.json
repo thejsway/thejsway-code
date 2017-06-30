@@ -9,14 +9,6 @@
       "webRoot": "${workspaceRoot}"
     },
     {
-      "trace": true,
-      "type": "chrome",
-      "request": "launch",
-      "name": "Launch Chrome (JS)",
-      "file": "${fileDirname}/../html/${fileBasenameNoExtension}.html",
-      "webRoot": "${workspaceRoot}"
-    },
-    {
       "type": "node",
       "request": "launch",
       "name": "Launch program",
