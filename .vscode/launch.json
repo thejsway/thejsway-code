@@ -1,0 +1,26 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "Launch Chrome",
+      "file": "${file}",
+      "webRoot": "${workspaceRoot}"
+    },
+    {
+      "trace": true,
+      "type": "chrome",
+      "request": "launch",
+      "name": "Launch Chrome (JS)",
+      "file": "${fileDirname}/../html/${fileBasenameNoExtension}.html",
+      "webRoot": "${workspaceRoot}"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch program",
+      "program": "${file}"
+    }
+  ]
+}
