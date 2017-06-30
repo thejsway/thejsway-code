@@ -2,7 +2,7 @@
 Guess the final values of variables
 */
 
-// Allow all variables to be defined with let
+// Temporary allow all variables to be defined with let
 /* eslint prefer-const: "off" */
 
 let nb1 = Number(prompt("Enter nb1:"));

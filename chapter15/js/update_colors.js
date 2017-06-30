@@ -5,8 +5,8 @@ Updating colors
 const textColor = prompt("Enter the text color:");
 const backgroundColor = prompt("Enter the background color:");
 
-const divElements = document.getElementsByTagName("div");
-for (const divElement of divElements) {
+const divElements = Array.from(document.getElementsByTagName("div"));
+divElements.forEach(divElement => {
   divElement.style.color = textColor;
   divElement.style.backgroundColor = backgroundColor;
-}
+});

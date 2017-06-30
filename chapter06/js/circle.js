@@ -14,7 +14,7 @@ const circle = {
 
   // Return the area of the circle
   area() {
-    return Math.pow(this.radius, 2) * Math.PI;
+    return this.radius ** 2 * Math.PI;
   }
 };
 

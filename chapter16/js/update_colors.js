@@ -23,8 +23,8 @@ document.addEventListener("keypress", e => {
       console.log(`The ${key} key is not handled`);
   }
   // Changing colors for all <div> elements
-  const divElements = document.getElementsByTagName("div");
-  for (const divElement of divElements) {
+  const divElements = Array.from(document.getElementsByTagName("div"));
+  divElements.forEach(divElement => {
     divElement.style.backgroundColor = color;
-  }
+  });
 });

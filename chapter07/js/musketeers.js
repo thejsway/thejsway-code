@@ -2,6 +2,9 @@
 Musketeers
 */
 
+// Temporary allow for-of loop
+/* eslint no-restricted-syntax: "off" */
+
 const musketeers = ["Athos", "Porthos", "Aramis"];
 
 console.log("Here are the three musketeers:");

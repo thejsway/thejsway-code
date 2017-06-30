@@ -10,7 +10,7 @@ const circumference = radius => 2 * radius * Math.PI;
 } */
 
 // Return the area of a circle
-const area = radius => Math.pow(radius, 2) * Math.PI;
+const area = radius => radius ** 2 * Math.PI;
 // Alternative solution using a function declaration
 /* function area(radius) {
   return Math.pow(radius, 2) * Math.PI;
