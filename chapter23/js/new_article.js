@@ -5,7 +5,7 @@ Send an article
 document.querySelector("form").addEventListener("submit", e => {
   e.preventDefault();
   const formData = new FormData(e.target);
-  fetch("http://localhost:3000/articles", {
+  fetch("https://thejsway.glitch.me/articles", {
     method: "POST",
     body: formData
   })

@@ -2,6 +2,7 @@
 List of cars
 */
 
+// Create a structured JavaScript object
 const cars = [
   {
     model: "Peugeot",
@@ -17,7 +18,8 @@ const cars = [
   }
 ];
 
-fetch("http://localhost:3000/cars", {
+// Send this object as JSON data to the server
+fetch("https://thejsway.glitch.me/api/cars", {
   method: "POST",
   headers: {
     Accept: "application/json",

@@ -7,7 +7,7 @@ document.getElementById("buyButton").addEventListener("click", () => {
   formData.append("size", "L");
   formData.append("color", "blue");
 
-  fetch("http://localhost:3000/tshirt", {
+  fetch("https://thejsway.glitch.me/tshirt", {
     method: "POST",
     body: formData
   })

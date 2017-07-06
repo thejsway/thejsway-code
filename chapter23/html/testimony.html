@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Testimony</title>
+</head>
+
+<body>
+    <h2>Leave a testimony</h2>
+    <form>
+        <p>
+            <label for="name">Your name</label>:
+            <input type="text" name="name" id="name" required>
+        </p>
+        <p>
+            Your learning experience so far was:
+            <select name="evaluation" id="evaluation">
+                <option value="5">Awesome!</option>
+                <option value="4">Great</option>
+                <option value="3" selected>Good</option>
+                <option value="2">Average</option>
+                <option value="1">Poor</option>
+            </select>
+            <br>
+        </p>
+        <p>
+            <textarea name="message" id="message" rows="5" placeholder="Leave a message"></textarea>
+        </p>
+        <input type="submit" value="Send">
+    </form>
+    <p id="result"></p>
+
+    <script src="../js/testimony.js"></script>
+</body>
+
+</html>
