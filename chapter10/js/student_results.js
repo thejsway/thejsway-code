@@ -31,12 +31,13 @@ const average = array =>
   array.reduce((sum, value) => sum + value, 0) / array.length;
 
 // Filter by sex, then map each student to an object containing her name and average grade
-// Parentheses between returned object of map function are mandatory
 console.log(
-  students.filter(female).map(student => ({
-    name: student.name,
-    avgGrade: average(student.grades)
-  }))
+  students.filter(female).map(student => {
+    return {
+      name: student.name,
+      avgGrade: average(student.grades)
+    };
+  })
 );
 
 // Alternative solution using the classical function syntax
