@@ -1,4 +1,8 @@
-// Value of number π
+/*
+Circle module
+*/
+
+// Value of number π (private to the module)
 const PI = Math.PI;
 
 // Return the circumference of a circle

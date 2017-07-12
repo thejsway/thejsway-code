@@ -1,4 +1,4 @@
-// Export a class User
+// Export a User class
 module.exports = class User {
   constructor(firstName, lastName) {
     this.firstName = firstName;

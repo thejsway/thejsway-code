@@ -1,8 +1,18 @@
 {
-  "name": "thejsway-chapter24",
+  "name": "thejsway-node-example",
   "version": "1.0.0",
+  "description": "Node example for the book \"The JavaScript Way\"",
+  "scripts": {
+    "start": "node index.js"
+  },
   "dependencies": {
-    "moment": "^2.18.1",
-    "semver": "^5.3.0"
-  }
+    "semver": "^5.3.0",
+    "moment": "^2.18.1"
+  },
+  "keywords": [
+    "javascript",
+    "node",
+    "thejsway"
+  ],
+  "author": "Baptiste Pesquet"
 }
