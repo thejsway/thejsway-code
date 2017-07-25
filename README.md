@@ -1,6 +1,6 @@
 # The JavaScript Way - Source code
 
-Source code for the book "The JavaScript Way".
+Source code for [The JavaScript Way](https://github.com/bpesquet/thejsway) book.
 
 ## Forewords
 

@@ -65,10 +65,11 @@ const createLinkElement = link => {
 };
 
 // Create and return a DOM input element
-// Parameters are placeholder text and input size
-const createInputElement = (placeholder, size) => {
+// Parameters are name, placeholder text and input size
+const createInputElement = (name, placeholder, size) => {
   const inputElement = document.createElement("input");
   inputElement.type = "text";
+  inputElement.setAttribute("name", name);
   inputElement.setAttribute("placeholder", placeholder);
   inputElement.setAttribute("size", size);
   inputElement.setAttribute("required", "true");
@@ -79,16 +80,16 @@ const createInputElement = (placeholder, size) => {
 // Create and return a form for submitting a new link
 const createLinkForm = () => {
   // Create input fields for link properties
-  const authorElement = createInputElement("Enter author", 20);
-  const titleElement = createInputElement("Enter link title", 40);
-  const urlElement = createInputElement("Enter link URL", 40);
+  const authorElement = createInputElement("author", "Enter author", 20);
+  const titleElement = createInputElement("title", "Enter link title", 40);
+  const urlElement = createInputElement("url", "Enter link URL", 40);
 
   // Create submit button
   const submitElement = document.createElement("input");
   submitElement.type = "submit";
   submitElement.value = "Add link";
   submitElement.classList.add("btn");
-  submitElement.classList.add("btn-default");
+  submitElement.classList.add("btn-primary");
 
   // Create link submission form
   const linkFormElement = document.createElement("form");

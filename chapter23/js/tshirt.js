@@ -7,7 +7,7 @@ document.getElementById("buyButton").addEventListener("click", () => {
   formData.append("size", "L");
   formData.append("color", "blue");
 
-  fetch("https://thejsway-server.herokuapp.com/tshirt", {
+  fetch("https://thejsway-server.glitch.me/tshirt", {
     method: "POST",
     body: formData
   })
