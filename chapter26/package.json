@@ -1,0 +1,18 @@
+{
+  "name": "thejsway-publink",
+  "version": "1.0.0",
+  "description": "Final project for The JavaScript Way book",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.15.3",
+    "multer": "^1.3.0"
+  },
+  "keywords": [
+    "javascript",
+    "node",
+    "thejsway"
+  ],
+  "author": "Baptiste Pesquet"
+}
