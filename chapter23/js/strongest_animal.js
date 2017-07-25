@@ -9,7 +9,7 @@ document.querySelector("form").addEventListener("submit", e => {
   // Create a FormData object, passing the form as a parameter
   const formData = new FormData(e.target);
   // Send form data to the server with an aynchronous POST request
-  fetch("https://thejsway.glitch.me/animals", {
+  fetch("https://thejsway-server.glitch.me/animals", {
     method: "POST",
     body: formData
   })

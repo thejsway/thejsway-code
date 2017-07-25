@@ -22,7 +22,7 @@ const traveler = {
 };
 
 // Send this object as JSON data to the server
-fetch("https://thejsway.glitch.me/api/countries", {
+fetch("https://thejsway-server.herokuapp.com/api/countries", {
   method: "POST",
   headers: {
     Accept: "application/json",
