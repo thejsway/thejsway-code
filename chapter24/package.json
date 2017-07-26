@@ -1,7 +1,7 @@
 {
-  "name": "thejsway-node-example",
+  "name": "thejsway-node-examples",
   "version": "1.0.0",
-  "description": "Node example for the book \"The JavaScript Way\"",
+  "description": "Node examples for The JavaScript Way book",
   "scripts": {
     "start": "node index.js"
   },
@@ -9,10 +9,6 @@
     "semver": "^5.3.0",
     "moment": "^2.18.1"
   },
-  "keywords": [
-    "javascript",
-    "node",
-    "thejsway"
-  ],
+  "keywords": ["javascript", "node", "thejsway"],
   "author": "Baptiste Pesquet"
 }
