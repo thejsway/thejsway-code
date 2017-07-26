@@ -2,7 +2,7 @@
 Blog example
 */
 
-fetch("https://thejsway-server.glitch.me/api/articles")
+fetch("https://thejsway-server.herokuapp.com/api/articles")
   .then(response => response.json())
   .then(articles => {
     articles.forEach(article => {

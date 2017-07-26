@@ -19,7 +19,7 @@ const cars = [
 ];
 
 // Send this object as JSON data to the server
-fetch("https://thejsway-server.glitch.me/api/cars", {
+fetch("https://thejsway-server.herokuapp.com/api/cars", {
   method: "POST",
   headers: {
     Accept: "application/json",
