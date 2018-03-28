@@ -71,7 +71,7 @@ while (choice !== "0") {
         const maxIndex = links.length;
         while (index < 1 || index > links.length) {
           index = Number(
-            prompt(`Enter the link index (between 1 and ${maxIndex}):`)
+            prompt(`Enter the index of the link to be removed (between 1 and ${maxIndex}):`)
           );
         }
         // Remove selected link from array
