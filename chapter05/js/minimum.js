@@ -11,12 +11,8 @@ const min = (a, b) => {
 };
 
 // Alternative solution using an arrow function
-/* function min(a, b) {
-  if (a < b) {
-    return a;
-  }
-  return b;
-} */
+
+// const min = (a, b) => a < b? a : b;
 
 console.log(min(4.5, 5)); // Must show 4.5
 console.log(min(19, 9)); // Must show 9
