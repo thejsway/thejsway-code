@@ -2,29 +2,27 @@
 Weather in your area
 */
 
-// Please generate yourself an API key instead of using mine
+// My API key is 91c73438eb56a544b5ffba0e28613937
+// Please use your own to test this service
 fetch(
-  "http://api.wunderground.com/api/50a65432f17cf542/conditions/q/france/bordeaux.json"
+  "http://api.openweathermap.org/data/2.5/weather?q=Bordeaux,fr&APPID=91c73438eb56a544b5ffba0e28613937&units=metric"
 )
-  .then(response => response.json())
-  .then(weather => {
-    // Access some weather properties
-    const location = weather.current_observation.display_location.full;
-    const temperature = weather.current_observation.temp_c;
-    const humidity = weather.current_observation.relative_humidity;
-    const imageUrl = weather.current_observation.icon_url;
+  .then((response) => response.json())
+  .then((weatherData) => {
+    // Extract some weather properties from API call result
+    const location = weatherData.name;
+    const temperature = weatherData.main.temp;
+    const humidity = weatherData.main.humidity;
+
     // Create DOM elements for properties
     const summaryElement = document.createElement("div");
-    summaryElement.textContent = `Temperature is ${temperature} °C with ${humidity} humidity.`;
-    const imageElement = document.createElement("img");
-    imageElement.src = imageUrl;
+    summaryElement.textContent = `Temperature is ${temperature} °C with ${humidity}% humidity.`;
     // Add location to title
     document.querySelector("h2").textContent += ` ${location}`;
     // Add elements to the page
     const weatherElement = document.getElementById("weather");
     weatherElement.appendChild(summaryElement);
-    weatherElement.appendChild(imageElement);
   })
-  .catch(err => {
+  .catch((err) => {
     console.error(err.message);
   });
