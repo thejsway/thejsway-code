@@ -10,7 +10,7 @@ const min = (a, b) => {
   return b;
 };
 
-// Alternative solution using an arrow function
+// Alternative solution using a ES5-style function definition
 /* function min(a, b) {
   if (a < b) {
     return a;
