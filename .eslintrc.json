@@ -1,24 +1,22 @@
 {
-  "extends": ["airbnb", "prettier"],
-  "env": {
-    "browser": true
-  },
-  "plugins": ["prettier"],
-  "rules": {
-    "no-console": "off",
-    "no-alert": "off",
-    "no-plusplus": "off",
-    "default-case": "off",
-    "no-param-reassign": [
-      "error",
-      {
-        "props": false
-      }
-    ],
-    "arrow-body-style": [
-      "error",
-      "as-needed",
-      { "requireReturnForObjectLiteral": true }
-    ]
-  }
+	"root": true,
+	"env": {
+		"node": true,
+		"es2016": true,
+		"browser": true
+	},
+	"rules": {
+		"no-console": 0,
+		"eqeqeq":"warn",
+		"no-cond-assign": 0,
+		"no-unused-vars": 1,
+		"no-extra-semi": "warn",
+		"semi": "warn"
+	},
+	"extends": "eslint:recommended",
+	"parserOptions": {
+		"ecmaFeatures": {
+			"experimentalObjectRestSpread": true
+		}
+	}
 }
