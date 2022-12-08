@@ -1,10 +1,10 @@
 /*
-Star Wars universe
+Star Wars planets
 */
 
 // Show info about a planet
 const showPlanetInfo = planetId => {
-  fetch(`http://swapi.co/api/planets/${planetId}`)
+  fetch(`http://swapi.dev/api/planets/${planetId}`)
     .then(response => response.json())
     .then(planet => {
       const movieCount = planet.films.length;

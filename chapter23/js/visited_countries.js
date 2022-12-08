@@ -7,16 +7,16 @@ const traveler = {
   name: "Sam",
   countries: [
     {
-      name: "Ecuador",
-      year: 2003
+      name: "Italy",
+      year: 2022
     },
     {
-      model: "Portugal",
-      color: 2004
+      model: "Ireland",
+      color: 2021
     },
     {
-      model: "Russia",
-      color: 2016
+      model: "USA",
+      color: 2021
     }
   ]
 };
